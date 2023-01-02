@@ -1,4 +1,5 @@
 const path = require("path");
+const cors = require("cors");
 
 const express = require("express");
 const mongoose = require("mongoose");
@@ -8,6 +9,8 @@ const multer = require("multer");
 const feedRoutes = require("./routes/feed");
 
 const app = express();
+
+app.use(cors());
 
 const fileStorage = multer.diskStorage({
   destination: (req, file, cb) => {
